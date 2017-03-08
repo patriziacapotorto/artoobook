@@ -12,7 +12,8 @@ var path = require('path');
 // app.use('/jquery',express.static(path.join(__dirname,"..","node_modules","jquery","dist")));
 // app.use('/bootstrap',express.static(path.join(__dirname,"..","node_modules","bootstrap","dist")));
 
-
+app.use('/js',express.static(path.join(__dirname,"..","client","js")));
+app.use('/css',express.static(path.join(__dirname,"..","client","css")));
 
 app.get('/', function(req,res){
   res.sendFile(path.join(__dirname,"..","client","index.html"));
