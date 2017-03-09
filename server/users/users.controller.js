@@ -35,27 +35,26 @@ module.exports = (function (){
     });
   };
 
+
+//CANCELLA UTENTE
   var deleteUser = function(req,res){
     var id = req.params.id;
-    res.send('Eliminazione utente con id: '+id);
+    Users.findByIdAndRemove(id).exec().then(function(data){
+     res.status(200).json(data);
+    }).catch(function (err){
+    throw err;
+    });
   };
 
   //AGGIORNA UTENTE
-  //update
-// User.findOne({'nome': 'Paolo'})
-//     .exec()
-//     .then(function (data) {
-//         data.eta = 35;
-//         return data.save();
-//     })
-//     .then(function () {
-//         console.log('Utente aggiornato');
-//     })
-//     .catch(function (err) {
-//         throw err;
-// });
   var updateUser = function(req,res){
-    res.send('Aggiornato utente con id: '+id);
+      var id = req.params.id;
+      var newData = req.body;
+      Users.findByIdAndUpdate(id, newData).then(function(data){
+        res.status(200).json(data);
+      }).catch(function (err){
+      throw err;
+      });
   };
 
   return {
