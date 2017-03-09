@@ -57,12 +57,22 @@ module.exports = (function (){
       });
   };
 
+  var cercaUser = function(req,res){
+    var cerca = req.query.cerca;
+    Users.find({$or: [{nome:cerca},{cognome:cerca}]}).exec().then(function(data){
+      res.status(200).json(data);
+    }).catch(function (err){
+    throw err;
+    });
+  };
+
   return {
     getUsers: getUsers,
     createUser:  createUser,
     detailUser: detailUser,
     deleteUser: deleteUser,
-    updateUser: updateUser
+    updateUser: updateUser,
+    cercaUser : cercaUser
   }
 
 })();
