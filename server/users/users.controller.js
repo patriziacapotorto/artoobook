@@ -15,10 +15,9 @@ module.exports = (function (){
 //CREAZIONE NUOVO UTENTE
   var createUser = function(req,res){
     var utente = req.body;
-    console.log(utente);
     var newUtente = new Users(utente);
-    newUtente.save().then(function () {
-    console.log('Utente salvato nel db');
+    newUtente.save().then(function (data) {
+    res.status(200).send(data);
     }).catch(function (err) {
     res.status(500).send(err);
     });

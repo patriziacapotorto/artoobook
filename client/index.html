@@ -12,14 +12,36 @@
 </head>
 
 <body>
-  <div class="row">
+  <div class="row primariga">
       <div class="col-md-8 col-sm-8 col-xs-12">
         <h2>Lista Utenti</h2>
-        <input type="text" id="nome_film">
+        <!-- <input type="text" id="nome_film">
         <button id="bottoneRicerca" class="btn btn-default" disabled="disabled">Cerca Film</button>
         <span id="tot_film"></span>
-        <div id="loading">Ricerca in corso...</div>
+        <div id="loading">Ricerca in corso...</div> -->
       </br>
+      <form id="formMia">
+          <div class="form-group">
+             <label for="nome">Nome</label>
+             <input type="text" class="form-control" id="nome" placeholder="Nome">
+          </div>
+          <div class="form-group">
+             <label for="cognome">Cognome</label>
+             <input type="text" class="form-control" id="cognome" placeholder="Cognome">
+          </div>
+          <div class="form-group">
+             <label for="sesso">Genere</label>
+             <select id="sesso">
+                <option value="Male">Maschio</option>
+                <option value="Female">Femmina</option>
+             </select>
+          </div>
+          <div class="form-group" name="sesso">
+             <label for="eta">Età</label>
+             <input type="number" class="form-control" id="eta" placeholder="età" min="0" max="100">
+          </div>
+          <button id="crea" type="submit" class="btn btn-default">Inserisci</button>
+          <form>
           <table class="table table-striped mia">
               <thead>
                   <tr>
@@ -44,7 +66,9 @@
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 crossorigin="anonymous"></script>
     <!-- <script src="../db/db.json"></script> -->
-<script src="js/script.js"></script> 
+<script src="js/script.js"></script>
+<script src="js/Users.js"></script>
+
 
   <!-- <script src="cercafilms.js"></script>
   <script src="Films.js "></script> -->
