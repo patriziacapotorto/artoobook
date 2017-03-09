@@ -13,10 +13,11 @@
 
 <body>
   <div class="row primariga">
-      <div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="col-md-10 col-sm-8 col-xs-12">
         <h2>Lista Utenti</h2>
+      <button id="btn_crea" class="btn btn-default" >Crea nuovo utente</button>
         <!-- <input type="text" id="nome_film">
-        <button id="bottoneRicerca" class="btn btn-default" disabled="disabled">Cerca Film</button>
+
         <span id="tot_film"></span>
         <div id="loading">Ricerca in corso...</div> -->
       </br>
@@ -36,19 +37,43 @@
                 <option value="Female">Femmina</option>
              </select>
           </div>
-          <div class="form-group" name="sesso">
+          <div class="form-group">
              <label for="eta">Età</label>
              <input type="number" class="form-control" id="eta" placeholder="età" min="0" max="100">
           </div>
           <button id="crea" type="submit" class="btn btn-default">Inserisci</button>
-          <form>
-          <table class="table table-striped mia">
+        </form>
+        <form id="aggiornaForm">
+            <div class="form-group">
+               <label for="nome1">Nome</label>
+               <input type="text" class="form-control" id="nome1" placeholder="Nome">
+            </div>
+            <div class="form-group">
+               <label for="cognome1">Cognome</label>
+               <input type="text" class="form-control" id="cognome1" placeholder="Cognome">
+            </div>
+            <div class="form-group">
+               <label for="sesso1">Genere</label>
+               <select id="sesso1" name="sesso1">
+                  <option  value="maschio">maschio</option>
+                  <option  value="femmina">femmina</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="eta1">Età</label>
+               <input type="number" class="form-control" id="eta1" placeholder="età" min="0" max="100">
+            </div>
+            <button id="modifica" type="submit" class="btn btn-default">Salva modifiche</button>
+          </form>
+          <table class="table table-striped tabmia">
               <thead>
                   <tr>
-                      <th>id</th>
                       <th>Nome</th>
                       <th>Cognome</th>
                       <th>Genere</th>
+                      <th>Età</th>
+                      <th></th>
+
                   </tr>
               </thead>
               <!-- popolamento tabella dinamicamente -->
@@ -57,7 +82,7 @@
               </tbody>
           </table>
       </div>
-      <div class="col-md-4 col-sm-8 col-xs-12">
+      <div class="col-md-2 col-sm-8 col-xs-12">
 
       </div>
 </body>

@@ -1,12 +1,21 @@
 h2{
   text-align: center;
+  color: red;
+}
+#btn_crea{
+  margin-left: 10%;
+  background-color: #eee;
 }
 #loading{
   display: none;
 }
-.mia{
-  display: none;
+.tabmia{
+  margin-left: 10%;
+  margin-top: 2%;
 }
 #formMia{
   margin-left: 10%;
+}
+#aggiornaForm{
+  display: none;
 }
