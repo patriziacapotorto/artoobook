@@ -25,9 +25,14 @@ module.exports = (function (){
     });
   };
 
+//DETTAGLIO UTENTE
   var detailUser = function(req,res){
     var id = req.params.id;
-    res.send('Dettaglio utente con id: '+id);
+    Users.findById(id).exec().then(function(data){
+      res.status(200).json(data);
+    }).catch(function (err) {
+    throw err;
+    });
   };
 
   var deleteUser = function(req,res){
