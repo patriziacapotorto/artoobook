@@ -14,14 +14,13 @@ module.exports = (function (){
 
 //CREAZIONE NUOVO UTENTE
   var createUser = function(req,res){
-    res.send('Creazione utente');
     var utente = req.body;
     console.log(utente);
     var newUtente = new Users(utente);
     newUtente.save().then(function () {
     console.log('Utente salvato nel db');
     }).catch(function (err) {
-    throw err;
+    res.status(500).send(err);
     });
   };
 
